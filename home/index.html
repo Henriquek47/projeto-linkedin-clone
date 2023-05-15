@@ -5,36 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Home</title>
+    <script src="index.js"></script>
 </head>
 
 <body>
     <nav>
         <div class="left">
             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="">
-            <input type="text">
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar">
+                <li-icon type="search"></li-icon>
+            </div>
         </div>
         <div class="center">
-            <a href="" class="home">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="">
+            <a href="" class="home active">
+                <li-icon type="home"></li-icon>
                 <span title="Inicio">Inicio</span>
             </a>
-            <a href="" class="rede">
-                    <img src="https://cdn-icons-png.flaticon.com/512/681/681457.png" alt="">
+            <a href="" class="network">
+                <li-icon type="network"></li-icon>
                     <span title="Minha rede">Minha rede</span>
             </a>
-            <a href="" class="vagas">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4024/4024092.png" alt="">
+            <a href="" class="jobs">
+                <li-icon type="jobs"></li-icon>
                     <span title="Vagas">Vagas</span>
             </a>
             <a href="" class="messages">
-                    <img src="https://cdn-icons-png.flaticon.com/512/685/685887.png" alt="">
+                <li-icon type="messages"></li-icon>
                     <span title="Messagens">Messagens</span>
             </a>
             <a href="" class="notification">
-                    <img src="https://cdn-icons-png.flaticon.com/512/565/565422.png" alt="">
+                <li-icon type="notification"></li-icon>
                     <span title="Notificações">Notificações</span>
+            </a>
+            <a href="" class="profile">
+                <li-icon type="profile"></li-icon>
+                <div>
+                    <span title="Eu">Eu</span>
+                    <li-icon type="arrow"></li-icon>
+                </div>
             </a>
         </div>
         <div class="right"></div>

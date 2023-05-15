@@ -1,0 +1,43 @@
+@import url("nav.css");
+
+body{
+    background-color: rgb(226, 226, 226);
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+}
+
+aside{
+    height: 500px;
+    width: 255px;
+    border: 1px solid blue;
+}
+
+section{
+    display: block;
+    margin-inline: 40px;
+}
+
+.add-post{
+    height: 100px;
+    width: 500px;
+    margin-bottom: 40px;
+}
+
+.posts{
+    height: 500px;
+    width: 500px;
+    border: 1px solid blue;
+}
+
+.information-notices{
+    height: 350px;
+    width: 280px;
+    border: 1px solid blue;
+}
