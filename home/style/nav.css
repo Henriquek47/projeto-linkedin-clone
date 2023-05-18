@@ -3,18 +3,17 @@ nav{
     height: 53px;
     width: 100%;
     background-color: white;
-    align-items: center;  
+    align-items: center; 
+    justify-content: center;
 }
 
-nav .left{
+.left{
     display: flex;
     align-items: center;
-    margin-left: 18%;
-    width: 15%;
 }
 
 .left img{
-    max-height: 35px;
+    height: 35px;
     margin-right: 10px;
 }
 
@@ -35,16 +34,13 @@ nav .left{
     width: 250px;
     border: 0;
     background-color: rgb(224, 227, 236);
-}
-
-.left .search-bar input::placeholder{
-    padding-left: 40px;
+    padding-left: 50px;
 }
 
 nav .center{
     display: flex;
-    margin-left: 10%;
     height: 100%;
+    margin-left: 350px;
 }
 
 .center a{
@@ -99,4 +95,73 @@ a::after{
 a.active::after {
     filter: none;
     transform: scaleX(1);
+}
+
+@media (max-width: 1190px){
+
+    nav{
+        justify-content: space-between;
+    }
+
+    .left{
+        margin-left: 10px;
+    }
+
+    .left .search-bar input{
+        width: 200px;
+    }
+
+    .center a{
+        margin-left: 0px;
+    }
+
+    nav .center{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 760px){
+
+    nav{
+        justify-content: center;
+    }
+
+    .left .search-bar {
+        width: 60px; /* Reduz a largura do container quando o input é ocultado */
+    }
+
+    .left .search-bar input{
+        display: none;
+    }
+
+    .center{
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 548px){
+
+    nav{
+        justify-content: safe;
+    }
+
+    .home, .network, .jobs, .messages, .notification, .profile{
+        display: flex;
+        width: 25px;
+        align-items: center;
+        margin-right: 25px;
+    }
+
+    .home span, .network span, .jobs span, .messages span, .notification span, .profile span{
+        display: none;
+    }
+
+    .profile div li-icon{
+        display: none;
+    }
+
+    a.active::after {
+        filter: none;
+        transform: scaleX(0);
+    }
 }
