@@ -29,6 +29,19 @@ class LiIcon extends HTMLElement {
         case 'search':
           imgContent = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png""></img>`;
           break;
+
+        case 'photo':
+          imgContent = `<img src="https://cdn2.iconfinder.com/data/icons/web-interface-icons/66/Img-512.png"></img>`;
+          break;
+        case 'video':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/4397/4397315.png"></img>`;
+          break;
+        case 'event':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/4285/4285436.png"></img>`;
+          break;
+        case 'write-article':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/256/3959/3959355.png"></img>`;
+          break;
         default:
           imgContent = '';
       }
