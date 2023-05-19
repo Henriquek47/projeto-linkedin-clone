@@ -1,22 +1,155 @@
 @import url("nav.css");
 
 body{
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(235, 235, 235);
     margin: 0;
     padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 main{
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 1200px;
     margin: auto;
+    margin-top: 30px;
 }
 
 aside{
-    height: 500px;
-    min-width: 225px;
-    border: 1px solid blue;
+    position: relative;
+    height: 410px;
+    width: 225px;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 2px 4px 1px rgba(114, 114, 114, 0.2);
+}
+
+aside .background{
+    height: 50px;
+    width: 225px;
+    top: 0;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    background-color: rgb(134, 167, 172);
+    position: absolute;
+}
+
+.user-profile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.user-profile ::after, .user-network::after, .tools::after{
+    content: "";
+    display: block; /* Adicione isto para fazer o pseudo-elemento ocupar a largura total */
+    position: absolute;
+    border-bottom: 0.5px solid rgb(238, 238, 238);
+    transform: scaleX(1);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.user-profile img{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+.user-profile .user-name{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 180px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+
+.user-profile .user-optional-description{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    font-size: 0.7rem;
+    width: 205px;
+    color: rgb(121, 121, 121);
+    letter-spacing: 1px;
+}
+
+.user-network{
+    margin-block: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+ .flex-direction{
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 15px;
+    margin-bottom: 3px;
+}
+
+.user-network a{
+    font-size: 0.8rem;
+    color: rgb(29, 29, 29);
+    margin-inline: 15px;
+    text-decoration: none;
+    white-space: nowrap;
+    
+}
+
+.flex-direction span{
+    font-size: 0.8rem;
+    color: rgb(160, 160, 160);
+}
+
+.flex-direction a{
+    font-size: 0.8rem;
+    color: rgb(55, 123, 187);
+    text-decoration: none;
+}
+
+.tools, .saves{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 15px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.tools span{
+    font-size: 0.8rem;
+    color: rgb(160, 160, 160);
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.tools a{
+    display: inline;
+    color: black;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.saves{
+    flex-direction: row;
+}
+
+.saves img{
+    height: 18px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.saves span{
+    font-size: 0.8rem;
+    color: rgb(43, 43, 43);
 }
 
 section{
