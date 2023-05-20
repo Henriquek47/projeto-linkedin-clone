@@ -42,6 +42,20 @@ class LiIcon extends HTMLElement {
         case 'write-article':
           imgContent = `<img src="https://cdn-icons-png.flaticon.com/256/3959/3959355.png"></img>`;
           break;
+
+        case 'like':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/2107/2107956.png" style="${changeToGrey}"></img>`;
+          break;
+        case 'comment':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" style="${changeToGrey}"></img>`;
+          break;
+        case 'share':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/3917/3917447.png" style="${changeToGrey}"></img>`;
+          break;
+        case 'send':
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/223/223484.png" style="${changeToGrey}"></img>`;
+          break;
+
         default:
           imgContent = '';
       }
@@ -52,8 +66,7 @@ class LiIcon extends HTMLElement {
   
   customElements.define('li-icon', LiIcon);
 
-
-  document.addEventListener('DOMContentLoaded', (event) => {
+  export function finterIcons(){
     document.querySelectorAll('nav .center a').forEach((link) => {
         link.addEventListener('click', (event) => {
             // Evita o comportamento padrão do link
@@ -81,5 +94,5 @@ class LiIcon extends HTMLElement {
             }
         });
     });
-});
+}
   

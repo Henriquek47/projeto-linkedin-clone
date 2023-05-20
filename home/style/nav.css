@@ -76,12 +76,12 @@ li-icon img {
     font-weight: 100;
 }
 
-a{
+nav a{
     position: relative;
     display: flex;
 }
 
-a::after{
+nav a::after{
     content: '';
     border-bottom: 2px solid black;
     content: "";
@@ -92,7 +92,7 @@ a::after{
     width: 100%;
 }
 
-a.active::after {
+nav a.active::after {
     filter: none;
     transform: scaleX(1);
 }
@@ -160,7 +160,7 @@ a.active::after {
         display: none;
     }
 
-    a.active::after {
+    nav a.active::after {
         filter: none;
         transform: scaleX(0);
     }

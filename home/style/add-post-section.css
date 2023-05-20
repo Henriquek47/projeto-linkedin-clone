@@ -46,8 +46,10 @@
 }
 
 .add-post ul a{
+    display: flex;
     text-decoration: none;
     color: rgb(141, 141, 141);
+    align-items: center;
 }
 
 .category-text{

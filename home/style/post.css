@@ -1,0 +1,73 @@
+.post{
+    width: 100%;
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 0px 2px 4px 1px rgba(114, 114, 114, 0.2);
+    margin-bottom: 20px;
+}
+
+.post .author{
+    display: flex;
+    padding: 15px;
+}
+
+.author .img-author{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.author .column-direction-author .author-name{
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.author .column-direction-author .description-author{
+    display: block;
+    font-size: 0.85rem;
+    color: rgb(124, 124, 124);
+}
+
+.author .column-direction-author .timestamp-post{
+    font-size: 0.85rem;
+    color: rgb(124, 124, 124);
+}
+
+.post .text-post{
+    padding-inline: 20px;
+}
+
+.text-post .text{
+    color: rgb(90, 90, 90);
+}
+
+.post .post-img{
+    text-align: center;
+}
+
+.post-img .author-img{
+    max-width: 100%;
+    min-width: 100%;
+    padding-top: 15px;
+}
+
+.post .reactions{
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 40px;
+    padding-block: 10px;
+}
+
+.post .react{
+    display: flex;
+    color: black;
+    text-decoration: none;
+    align-items: center;
+}
+
+.post .react li-icon{
+    padding-right: 7px;
+}

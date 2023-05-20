@@ -1,0 +1,49 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "user": {
+                "name": "José Alves",
+                "profile_picture": "https://media.licdn.com/dms/image/D4D03AQHkHjsQLV3dMw/profile-displayphoto-shrink_100_100/0/1665506395758?e=1689811200&v=beta&t=nF3jNQuiVyNqVP9BJR28SwdgnR7xgNVyF0qUCyeQ8bc",
+                "description": "Lorem ipsum dolor sit amet"
+            },
+            "created_at": "2023-02-16 04:56:25",
+            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+            "image": "https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+        },
+
+        {
+            "id": 1,
+            "user": {
+                "name": "José Alves",
+                "profile_picture": "https://media.licdn.com/dms/image/D4D03AQHkHjsQLV3dMw/profile-displayphoto-shrink_100_100/0/1665506395758?e=1689811200&v=beta&t=nF3jNQuiVyNqVP9BJR28SwdgnR7xgNVyF0qUCyeQ8bc",
+                "description": "Lorem ipsum dolor sit amet"
+            },
+            "created_at": "2023-02-16 04:56:25",
+            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+            "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"
+        },
+
+        {
+            "id": 1,
+            "user": {
+                "name": "José Alves",
+                "profile_picture": "https://media.licdn.com/dms/image/D4D03AQHkHjsQLV3dMw/profile-displayphoto-shrink_100_100/0/1665506395758?e=1689811200&v=beta&t=nF3jNQuiVyNqVP9BJR28SwdgnR7xgNVyF0qUCyeQ8bc",
+                "description": "Lorem ipsum dolor sit amet"
+            },
+            "created_at": "2023-02-16 04:56:25",
+            "text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+            "image": null
+        }
+    ],
+
+    "users": [
+        {
+            "id": 1,
+            "name": "Henrique Ramalho Lima",
+            "educational_background": "Aluno na IFBA - Instituto Federal da Bahia",
+            "connections": 3,
+            "image": "https://media.licdn.com/dms/image/C4D03AQF5qB7HxI4gIw/profile-displayphoto-shrink_100_100/0/1600383309437?e=1689811200&v=beta&t=n-dTGMPDPUa8xJkbGhvWTYZ1QnMcz-5DDyn5uqDbqcQ"
+        }
+    ]
+  }

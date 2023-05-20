@@ -1,6 +1,7 @@
 @import url("nav.css");
 @import url("user-section.css");
 @import url("add-post-section.css");
+@import url("post.css");
 
 body{
     background-color: rgb(235, 235, 235);
@@ -21,12 +22,6 @@ section{
     display: block;
     margin-inline: 40px;
     width: 555px;
-}
-
-.posts{
-    height: 500px;
-    width: 100%;
-    border: 1px solid blue;
 }
 
 .information-notices{
