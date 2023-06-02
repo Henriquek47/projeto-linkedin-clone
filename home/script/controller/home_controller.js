@@ -1,5 +1,5 @@
 import API from "../api/api.js";
-import { finterIcons } from "../icons.js";
+import { finterIcons } from "../view/components/icons.js";
 import Home from "../view/home.js";
 
 
