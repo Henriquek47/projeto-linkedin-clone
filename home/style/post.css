@@ -68,6 +68,36 @@
     align-items: center;
 }
 
+.post .react span{
+    color: rgb(104, 104, 104);
+}
+
 .post .react li-icon{
     padding-right: 7px;
+}
+
+.react-count{
+    position: relative;
+    margin-top: 7px;
+    margin-inline: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.react-count span{
+    color: rgb(155, 155, 155);
+    font-size: 14px;
+    margin-inline: 10px;
+    margin-bottom: 10px;
+}
+
+.react-count::after{
+    content: "";
+    display: block; /* Adicione isto para fazer o pseudo-elemento ocupar a largura total */
+    position: absolute;
+    border-bottom: 0.5px solid rgb(231, 231, 231);
+    transform: scaleX(1);
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
