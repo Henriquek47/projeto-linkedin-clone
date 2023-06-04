@@ -84,7 +84,7 @@
     justify-content: space-between;
 }
 
-.react-count span{
+.like-count, .comment-count, .share-count{
     color: rgb(155, 155, 155);
     font-size: 14px;
     margin-inline: 10px;

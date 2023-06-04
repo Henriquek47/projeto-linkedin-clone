@@ -1,57 +1,52 @@
-export default class Home{
+export default class Home {
 
     createPostElement(post) {
 
         let createdAt = new Date(post.createdAt);
         let formattedDate = createdAt.toLocaleString();
 
-        const template = document.createElement('template');
-        template.innerHTML = `<div class="post">
-       <div class="author">
-           <img class="img-author" src="${post.user.profile_picture}" alt="">
-           <div class="column-direction-author">
-               <a href="" class="author-name">${post.user.name}</a>
-               <span class="description-author">${post.user.description}</span>
-               <time class="timestamp-post" datetime="${post.createdAt}">${formattedDate}</time>
-           </div>
-       </div>
-       <div class="text-post">
-           <p class="text">${post.text.replace(/\n/g, '<br />')}</p>
-       </div>
-       ${post.image !== null ? `<div class="post-img"><img class="author-img" src="${post.image}" alt=""></div>` : ''}
-       <div class="react-count">
-            <span>curtidas ${post.like.length}</span>
-            <div class="flex-separate">
-                <span>${post.like.length} comentarios</span>
-                <span>${post.like.length}compartilharmentos</span>
-            </div>
-       </div>
-       <div class="reactions">
-           <div href="" class="react">
-               <li-icon type="like"></li-icon>
-               <span>Like</span>
-           </div>
-           <div href="" class="react">
-               <li-icon type="comment"></li-icon>
-               <span>Comment</span>
-           </div>
-           <div href="" class="react">
-               <li-icon type="share"></li-icon>
-               <span>Share</span>
-           </div>
-           <div href="" class="react">
-               <li-icon type="send"></li-icon>
-               <span>Send</span>
-           </div>
-       </div>
-    </div>`
+        const template = document.querySelector('#postContainer');
+        const postContainer = document.importNode(template.content, true);
 
-        return template.content.firstChild;
+
+        postContainer.querySelector(".img-author").src = post.user.profile_picture;
+        postContainer.querySelector(".author-name").textContent = post.user.name;
+        postContainer.querySelector(".description-author").textContent = post.user.description;
+        const postTime = postContainer.querySelector(".timestamp-post");
+        postTime.datetime = post.createdAt;
+        postTime.textContent = formattedDate;
+
+        postContainer.querySelector(".text").textContent = post.text;
+
+        const postImg = postContainer.querySelector(".post-img");
+
+        if (post.image != null) {
+            postImg.style.display = 'block';
+            postContainer.querySelector(".author-img").src = post.image;
+        } else {
+            postImg.style.display = 'none';
+        }
+
+        postContainer.querySelector(".like-count").textContent = 'curtidas ' + post.like_count;
+        postContainer.querySelector(".comment-count").textContent = post.like_count + ' comentarios';
+        postContainer.querySelector(".share-count").textContent = post.like_count + ' compartilhamentos';
+
+        // Find the like button element within the post
+        const likeButton = postContainer.querySelector('.like-button');
+
+        // Attach a click event listener to the like button
+        likeButton.addEventListener('click', function () {
+            // Code to run when the button is clicked
+            alert('Like button was clicked');
+        });
+
+
+        return postContainer;
     }
 
     createAsideElement(user) {
         const template = document.createElement('template');
-        template.innerHTML =  `<aside class="user">
+        template.innerHTML = `<aside class="user">
         <div class="background"></div>
         <div class="user-profile">
             <img src="${user.profile_picture}"
@@ -75,13 +70,13 @@ export default class Home{
             <span>Meus itens</span>
         </div>
     </aside>`
-    
-    return template.content.firstChild;
+
+        return template.content.firstChild;
     }
-    
+
     createAddNewPostElement(user) {
         const template = document.createElement('template');
-        template.innerHTML =  `<div class="add-post">
+        template.innerHTML = `<div class="add-post">
         <div class="flex-direction-input">
             <img src="${user.profile_picture}"
                 alt="">
@@ -106,13 +101,13 @@ export default class Home{
                 </a></li>
         </ul>
     </div>`
-    
-    return template.content.firstChild;
+
+        return template.content.firstChild;
     }
-    
+
     createNavBar(user) {
         const template = document.createElement('template');
-        template.innerHTML =  `<nav>
+        template.innerHTML = `<nav>
         <div class="left">
             <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="">
             <div class="search-bar">
@@ -151,7 +146,7 @@ export default class Home{
         </div>
         <div class="right"></div>
     </nav>`
-    
-    return template.content.firstChild;
+
+        return template.content.firstChild;
     }
 }

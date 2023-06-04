@@ -12,10 +12,11 @@ class HomeController{
 
     initialize() {
         document.addEventListener('DOMContentLoaded', async () => {
+            const postsContainer = document.querySelector('#postsContainer');
             const posts = await this.apiPosts.getData();
             posts.forEach(post => {
-                const postContainer = document.getElementById('postContainer');
-            postContainer.appendChild(this.home.createPostElement(post));
+                const postElement = this.home.createPostElement(post);
+                postsContainer.appendChild(postElement);
             });
 
             const user = await this.apiUser.getData({ 'user-id': 'faff6421-9952-47da-8748-4781c3517d81' });

@@ -19,8 +19,52 @@
         <div id="userAsideContainer"></div>
         <section>
             <div id="addPostContainer"></div>
-            <div id="postContainer">
+            <div id="postsContainer">
+                <!-- Os posts serão inseridos aqui -->
             </div>
+            <template id="postContainer">
+                <div class="post">
+                    <div class="author">
+                        <img class="img-author" src="" alt="">
+                        <div class="column-direction-author">
+                            <a href="" class="author-name"></a>
+                            <span class="description-author"></span>
+                            <time class="timestamp-post" datetime=""></time>
+                        </div>
+                    </div>
+                    <div class="text-post">
+                        <p class="text"></p>
+                    </div>
+                    <div class="post-img"><img class="author-img" src="" alt=""></div>
+                    <div class="react-count">
+                         <span class="like-count"></span>
+                         <div class="flex-separate">
+                             <span class="comment-count"></span>
+                             <span class="share-count"></span>
+                         </div>
+                    </div>
+                    <div class="reactions">
+                        <div href="" class="react">
+                        <button type="button" class="like-button">
+                            <li-icon type="like"></li-icon>
+                            <span>Like</span>
+                         </button>
+                        </div>
+                        <div href="" class="react">
+                            <li-icon type="comment"></li-icon>
+                            <span>Comment</span>
+                        </div>
+                        <div href="" class="react">
+                            <li-icon type="share"></li-icon>
+                            <span>Share</span>
+                        </div>
+                        <div href="" class="react">
+                            <li-icon type="send"></li-icon>
+                            <span>Send</span>
+                        </div>
+                    </div>
+                 </div>
+            </template>
         </section>
         <aside class="information-notices"></aside>
     </main>
