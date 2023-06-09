@@ -101,3 +101,8 @@
     bottom: 0;
     width: 100%;
 }
+
+.liked {
+    background-color: red;
+    color: red;
+}

@@ -1,6 +1,6 @@
 export default class Home {
 
-    createPostElement(post) {
+    createPostElement(post, onLikeButtonClick) {
 
         let createdAt = new Date(post.createdAt);
         let formattedDate = createdAt.toLocaleString();
@@ -34,10 +34,24 @@ export default class Home {
         // Find the like button element within the post
         const likeButton = postContainer.querySelector('.like-button');
 
+        const hasLiked = post.post_likes.length > 0;
+
+        if (hasLiked) {
+            likeButton.classList.add('liked');
+        } else {
+            likeButton.classList.remove('liked');
+        }
+
         // Attach a click event listener to the like button
-        likeButton.addEventListener('click', function () {
-            // Code to run when the button is clicked
-            alert('Like button was clicked');
+        likeButton.addEventListener('click', async () => {
+            const likeOrDisLike = await onLikeButtonClick()
+            if (likeOrDisLike['message'] == 'Success') {
+                if (!likeButton.classList.contains('liked')) {
+                    likeButton.classList.add('liked');
+                } else {
+                    likeButton.classList.remove('liked');
+                }
+            }
         });
 
 
