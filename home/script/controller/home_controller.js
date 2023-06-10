@@ -11,6 +11,7 @@ class HomeController{
         this.home = new Home();
     }
 
+
     initialize() {
         document.addEventListener('DOMContentLoaded', async () => {
             const postsContainer = document.querySelector('#postsContainer');
@@ -36,10 +37,9 @@ class HomeController{
         return async () => {
             let body = {post_id: post.id, user_id: 'faff6421-9952-47da-8748-4781c3517d81'}
             let response;
-            console.log(post.post_likes.length == 0);
-            if(post.post_likes.length == 0){
+            if(this.home.hasLiked === false){
                 response = await this.apiLike.postData(body);
-            }else if(post.post_likes.length > 0){
+            }else if(this.home.hasLiked === true){
                 response = await this.apiLike.deleteData(post.id, { 'user-id': 'faff6421-9952-47da-8748-4781c3517d81' });
             }
             return response;

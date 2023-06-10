@@ -1,4 +1,7 @@
 export default class Home {
+    constructor() {
+        this.hasLiked = false;
+    }
 
     createPostElement(post, onLikeButtonClick) {
 
@@ -34,9 +37,9 @@ export default class Home {
         // Find the like button element within the post
         const likeButton = postContainer.querySelector('.like-button');
 
-        const hasLiked = post.post_likes.length > 0;
+        const liked = post.post_likes.length > 0;
 
-        if (hasLiked) {
+        if (liked) {
             likeButton.classList.add('liked');
         } else {
             likeButton.classList.remove('liked');
@@ -45,12 +48,12 @@ export default class Home {
         // Attach a click event listener to the like button
         likeButton.addEventListener('click', async () => {
             const likeOrDisLike = await onLikeButtonClick()
-            if (likeOrDisLike['message'] == 'Success') {
-                if (!likeButton.classList.contains('liked')) {
-                    likeButton.classList.add('liked');
-                } else {
-                    likeButton.classList.remove('liked');
-                }
+            if (!likeButton.classList.contains('liked')) {
+                likeButton.classList.add('liked');
+                this.hasLiked = true;
+            } else {
+                likeButton.classList.remove('liked');
+                this.hasLiked = false;
             }
         });
 
