@@ -1,9 +1,6 @@
 export default class Home {
-    constructor() {
-        this.hasLiked = false;
-    }
 
-    createPostElement(post, onLikeButtonClick) {
+    createPostElement(post, createLikeHandler) {
 
         let createdAt = new Date(post.createdAt);
         let formattedDate = createdAt.toLocaleString();
@@ -12,9 +9,9 @@ export default class Home {
         const postContainer = document.importNode(template.content, true);
 
 
-        postContainer.querySelector(".img-author").src = post.user.profile_picture;
-        postContainer.querySelector(".author-name").textContent = post.user.name;
-        postContainer.querySelector(".description-author").textContent = post.user.description;
+        postContainer.querySelector(".img-author").src = post.profile;
+        postContainer.querySelector(".author-name").textContent = post.userName;
+        postContainer.querySelector(".description-author").textContent = post.userDescription;
         const postTime = postContainer.querySelector(".timestamp-post");
         postTime.datetime = post.createdAt;
         postTime.textContent = formattedDate;
@@ -30,31 +27,39 @@ export default class Home {
             postImg.style.display = 'none';
         }
 
-        postContainer.querySelector(".like-count").textContent = 'curtidas ' + post.like_count;
-        postContainer.querySelector(".comment-count").textContent = post.like_count + ' comentarios';
-        postContainer.querySelector(".share-count").textContent = post.like_count + ' compartilhamentos';
+        let iconLike = postContainer.querySelector(".like");
+
+        let countLike = postContainer.querySelector(".like-count");
+        countLike.textContent = 'curtidas ' + post.likeCount;
+        postContainer.querySelector(".comment-count").textContent = 0 + ' comentarios';
+        postContainer.querySelector(".share-count").textContent = 0 + ' compartilhamentos';
 
         // Find the like button element within the post
         const likeButton = postContainer.querySelector('.like-button');
 
-        const liked = post.post_likes.length > 0;
+        let liked = post.userLike;
 
         if (liked) {
-            likeButton.classList.add('liked');
+            iconLike.classList.add('liked');
         } else {
-            likeButton.classList.remove('liked');
+            iconLike.classList.remove('liked');
         }
 
         // Attach a click event listener to the like button
         likeButton.addEventListener('click', async () => {
-            const likeOrDisLike = await onLikeButtonClick()
-            if (!likeButton.classList.contains('liked')) {
+            post = await createLikeHandler()(post);
+            console.log(post);
+
+            liked = post.userLike;
+            if (liked) {
+                likeButton.classList.remove('no-liked');
                 likeButton.classList.add('liked');
-                this.hasLiked = true;
             } else {
                 likeButton.classList.remove('liked');
-                this.hasLiked = false;
+                likeButton.classList.add('no-liked');
             }
+
+            countLike.textContent = 'curtidas ' + post.likeCount
         });
 
 

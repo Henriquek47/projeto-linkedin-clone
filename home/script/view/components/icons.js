@@ -44,7 +44,7 @@ class LiIcon extends HTMLElement {
           break;
 
         case 'like':
-          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/2107/2107956.png" style="${changeToGrey}"></img>`;
+          imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/2107/2107956.png"></img>`;
           break;
         case 'comment':
           imgContent = `<img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" style="${changeToGrey}"></img>`;

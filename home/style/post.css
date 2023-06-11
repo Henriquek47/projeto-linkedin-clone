@@ -112,7 +112,10 @@
     outline: inherit;
 }
 
-.liked {
-    background-color: red;
-    color: red;
+.no-liked{
+    filter: invert(45%) sepia(7%) saturate(8%) hue-rotate(32deg) brightness(92%) contrast(84%);
+}
+
+.liked{
+    filter: invert(45%) sepia(86%) saturate(3260%) hue-rotate(183deg) brightness(101%) contrast(101%);
 }

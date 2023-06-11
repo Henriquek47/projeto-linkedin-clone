@@ -3,9 +3,9 @@ export default class API {
         this.url = url;
     }
 
-    async getData(headers) {
+    async getData(headers, pathParameters) {
         try {
-            const response = await fetch(this.url, { headers });
+            const response = await fetch(`${this.url}${pathParameters != null ? `/${pathParameters}` : ''}`, { headers });
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
