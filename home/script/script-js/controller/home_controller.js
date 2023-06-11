@@ -1,5 +1,5 @@
-import Post from "../../models/post.js";
-import User from "../../models/user.js";
+import Post from "../../../models/post.js";
+import User from "../../../models/user.js";
 import API from "../api/api.js";
 import { finterIcons } from "../view/components/icons.js";
 import Home from "../view/home.js";
