@@ -71,7 +71,7 @@ export default class Home {
         template.innerHTML = `<aside class="user">
         <div class="background"></div>
         <div class="user-profile">
-            <img src="${user.profile_picture}"
+            <img src="${user.profilePicture}"
                 alt="">
             <span class="user-name">${user.name.toUpperCase()}</span>
             <span class="user-optional-description">${user.description}</span>
@@ -79,7 +79,7 @@ export default class Home {
         <div class="user-network">
             <div class="flex-direction">
                 <span>Conexões</span>
-                <a href="">${user.followers.length}</a>
+                <a href="">${user.followers}</a>
             </div>
             <a href="">Amplie sua rede</a>
         </div>
@@ -100,7 +100,7 @@ export default class Home {
         const template = document.createElement('template');
         template.innerHTML = `<div class="add-post">
         <div class="flex-direction-input">
-            <img src="${user.profile_picture}"
+            <img src="${user.profilePicture}"
                 alt="">
             <input type="text" placeholder="Começar publicação">
         </div>

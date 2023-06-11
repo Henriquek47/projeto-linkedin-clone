@@ -1,4 +1,5 @@
 import Post from "../../models/post.js";
+import User from "../../models/user.js";
 import API from "../api/api.js";
 import { finterIcons } from "../view/components/icons.js";
 import Home from "../view/home.js";
@@ -25,7 +26,8 @@ class HomeController{
                 postsContainer.appendChild(postElement);
             });
 
-            const user = await this.apiUser.getData({ 'user-id': 'faff6421-9952-47da-8748-4781c3517d81' });
+            const userBody = await this.apiUser.getData({ 'user-id': 'faff6421-9952-47da-8748-4781c3517d81' });
+            const user = new User(userBody);
             const userAsideContainer = document.getElementById('userAsideContainer');
             userAsideContainer.appendChild(this.home.createAsideElement(user));
             const addPostContainer = document.getElementById('addPostContainer');
